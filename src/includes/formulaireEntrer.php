@@ -1,5 +1,4 @@
 
-
         <div class="d-flex justify-content-center">
             <h2 class="mb-5 text-uppercase font-weight-bold">Ajout d'une enchère</h2>
         </div>
@@ -11,7 +10,7 @@
                 <input type="text" class="form-control" id="description" maxlength="24" placeholder="24 caractères maximum"
                     name="description" required>
             </div>
-            <div class="d-flex justify-content-center align-items-center">
+           <div class="d-flex justify-content-center align-items-center">
                 <label class="fileUpload d-flex justify-content-center align-items-center bg-light">
                     Image upload 
                     <input type="file" name="image_upload" style="display: none;" id="image_upload" >

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php include 'src/includes/session.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -23,19 +25,19 @@
 
 
 
-    <!--Header sans barre de navigation-->
-    <?php include 'scr/includes/session.php'; ?>
+  
+
 
 
 
 
     <!--Affichage du Formulaire-->
-    <?php include 'scr/includes/formulaireEntrer'; ?>
+    <?php include 'src/includes/formulaireEntrer.php'; ?>
 
 
-    
+
     <!--Affichage des cartes-->
-    <?php include 'scr/includes/affichageCarte'; ?>
+    <?php include 'src/includes/affichageCarte.php'; ?>
 
 
 
