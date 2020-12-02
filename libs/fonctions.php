@@ -3,7 +3,7 @@
 
 <?php function validationDuFormulaire(){
 
-//Testoons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
+//Test si le fichier a bien été envoyé et s'il n'y a pas d'erreur
 $fileName = $_FILES['image']['name']; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
             if($fileName !== ""){ //On verifie si cette variable n'est pas vide alors
                 $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
@@ -39,4 +39,45 @@ $fileName = $_FILES['image']['name']; //On met dans une variable le nom de l'ima
            
         }
 
+?>
+
+<?php function encherirSurCarte(){
+    //Ici on gere l'ajout du prix à augmenter
+    if(isset($_POST['encherir'])){
+        $id = $_POST['btnEncherir'];
+        foreach($jsonArray as $values){
+            if($values['id'] == $id){
+                $values['prix_lancement'] = $values['prix_lancement'] + $values['augmentation_prix'];
+                $values['date_fin'] = $values['date_fin'] + $values['augmentation_duree'];
+                $values['gain'] = $values['gain'] + $values['prix_clic'];
+                $_POST['prix_lancement'] =  $values['prix_lancement'];
+                $_POST['date_fin'] =  $values['date_fin'];
+                $_POST['gain'] =  $values['gain'];
+            }
+        }
+    }
+}
+?>
+<?php function codeJson(){
+//on test si le fichier existe 
+$filename = 'libs/data.json';
+if (isset($filename)){
+        //fichier existe alors on récupère son contenu on transforme en array
+        //retourne le contenu du fichier dans une variable de type string
+        $jsonString = file_get_contents($filename);
+        //Transforme la structure json en array PHP
+        $jsonArray = json_decode($jsonString, true);
+        if ($jsonArray){
+            array_unshift($jsonArray,$_POST);
+            file_put_contents($filename,json_encode($jsonArray));
+        }else{
+            $jsonArray = [];
+            array_unshift($jsonArray,$_POST);
+            file_put_contents($filename,json_encode($jsonArray));
+
+            
+        }                      
+    }
+
+}
 ?>

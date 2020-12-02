@@ -1,18 +1,15 @@
-{
-    "description": "test0004",
-    "image": "d7d78cf7f40fac70eff164e0b102221e.jpg",
-    "prix_lancement": "1.00",
-    "duree": "48",
-    "prix_clic": "0.50",
-    "augmentation_prix": "0.01",
-    "augmentation_duree": "30",
-    "0": {
-        "description": "test1",
-        "image": "3d9ff2615d376f198db6c55be3812f07.jpg",
+[
+    {
+        "description": "test0002",
         "prix_lancement": "1.00",
         "duree": "48",
         "prix_clic": "0.50",
         "augmentation_prix": "0.01",
-        "augmentation_duree": "30"
+        "augmentation_duree": "30",
+        "submit": "",
+        "image": "b646b67929595f1dd11eb5507aebdf42.jpg",
+        "id": "ac23279f02a901e3261cba1920a364ef",
+        "etat": "inactif",
+        "gain": 0
     }
-}
+]
