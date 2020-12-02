@@ -1,5 +1,5 @@
-<?php session_start(); ?>
-<?php include 'src/includes/session.php'; ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -33,7 +33,7 @@
 
     <!--Affichage du Formulaire-->
     <?php include 'src/includes/formulaireEntrer.php'; ?>
-
+    <?php include 'libs/traitement.php'; ?>
 
 
     <!--Affichage des cartes-->

@@ -1,10 +1,14 @@
+<?php include '/libs/fonctions.php';?>
 
         <div class="d-flex justify-content-center">
             <h2 class="mb-5 text-uppercase font-weight-bold">Ajout d'une enchère</h2>
         </div>
-        
+        <?php if(isset($_POST['submit'])):?>
+            <?php validationDuFormulaire()?>
+        <?php endif ?>
+     
         <form class="container-fluid w-100 d-flex justify-content-center align-items-center flex-column" method="POST"
-            enctype="multipart/form-data" action="">
+             enctype="multipart/form-data" action="">
             <div class="d-flex justify-content-center align-items-center mb-3 items bg-light">
                 <label class="labelForm" for="#description">Description :</label>
                 <input type="text" class="form-control" id="description" maxlength="24" placeholder="24 caractères maximum"
@@ -13,7 +17,7 @@
            <div class="d-flex justify-content-center align-items-center">
                 <label class="fileUpload d-flex justify-content-center align-items-center bg-light">
                     Image upload 
-                    <input type="file" name="image_upload" style="display: none;" id="image_upload" >
+                    <input type="file" name="image" style="display: none;" id="image_upload">
         
                 </label>
             </div>
@@ -51,3 +55,4 @@
                     style="width:220px;">Ajouter l'enchère</button>
             </div>
         </form>
+        
