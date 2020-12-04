@@ -6,6 +6,9 @@ if (isset($_POST['submit'])){
     $_POST['id'] = $itemsId; // rajout de l'id 
     $_POST['etat'] = "inactif";
     $_POST['gain'] = 0;
+    $_POST['date_fin'] = null;
+    unset($_POST['submit']);
+    
     //on test si le fichier existe 
 $filename = 'libs/data.json';
 if (isset($filename)){

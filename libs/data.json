@@ -1,15 +1,1 @@
-[
-    {
-        "description": "test0002",
-        "prix_lancement": "1.00",
-        "duree": "48",
-        "prix_clic": "0.50",
-        "augmentation_prix": "0.01",
-        "augmentation_duree": "30",
-        "submit": "",
-        "image": "b646b67929595f1dd11eb5507aebdf42.jpg",
-        "id": "ac23279f02a901e3261cba1920a364ef",
-        "etat": "inactif",
-        "gain": 0
-    }
-]
+[{"description":"test0002","prix_lancement":1.43,"duree":"48","prix_clic":"0.50","augmentation_prix":"0.01","augmentation_duree":"30","image":"14875fde785623bec976b733608f13d7.jpg","id":"165ebf00adb27358f4c488d8b3c4b640","etat":"inactif","gain":21.5,"date_fin":1290},{"description":"test0002","prix_lancement":1.44,"duree":"48","prix_clic":"0.50","augmentation_prix":"0.01","augmentation_duree":"30","image":"53ff5c39038866bdfef6f56e667e3596.jpg","id":"ac629000cbb4e99c839e4b64bbdc3ada","etat":"inactif","gain":22,"date_fin":1320}]

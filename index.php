@@ -1,7 +1,6 @@
 
 
-<!DOCTYPE html>
-<html lang="fr">
+
 
 <head>
     <meta charset="UTF-8">
@@ -22,24 +21,19 @@
     <title>Formulaire d'enchère</title>
 </head>
 <body>
-
-
-
-  
-
-
-
-
-
+    <!-- header -->
+        <?php include 'src/includes/header.php'; ?>
+    
     <!--Affichage du Formulaire-->
     <?php include 'src/includes/formulaireEntrer.php'; ?>
-    <?php include 'libs/traitement.php'; ?>
+    <?php  include 'libs/traitement.php'; ?>
 
-
+    <?php include 'libs/encherirCarte.php'; ?>
     <!--Affichage des cartes-->
     <?php include 'src/includes/affichageCarte.php'; ?>
+   
 
-
+    
 
 
 
@@ -52,4 +46,4 @@
         crossorigin="anonymous"></script>
     </body>
     
-    </html>
+  

@@ -4,20 +4,19 @@
 <?php function validationDuFormulaire(){
 
 //Test si le fichier a bien été envoyé et s'il n'y a pas d'erreur
-$fileName = $_FILES['image']['name']; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
-            if($fileName !== ""){ //On verifie si cette variable n'est pas vide alors
-                $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
-                if($_FILES['image']['error'] > 0)//On verifie dans la variable $_FILES s'il n'y a pas d'erreur interne
+$fileName = $_FILES['image']['name']; //on stock le nom de l'image
+            if($fileName !== ""){ //différent de vide
+                $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On attribue les extensions qu'on veut garder
+                if($_FILES['image']['error'] > 0)//On verifie d $_FILES s'il n'y a pas d'erreur interne
                 {
-                    echo '<div class="alert alert-danger">Erreur survenue lors du transfert de l\'image</div>'; //Si oui alors on arrete la fonction et on affiche qu'il y a eu une erreur lors du transfert
+                    echo '<div class="alert alert-danger">Erreur survenue lors du transfert de l\'image</div>'; 
                     die;
                 }
-                $maxSize = 10000000; //On spécifie ici la taille maximale de l'image
+                $maxSize = 10000000; //la taille maximale de l'image
                 $fileSize = $_FILES['image']['size'];//On recupere via la $_FILES la taille de l'image ajoutée dans l'input
                 if($fileSize > $maxSize) //Taille de l'image doit être < à $maxSize
                 {
-                    echo '<div class="alert alert-danger"> Le fichier est trop lourd !!</div>'; //Si trop lourd alors on envoie le message que le fichier est trop lourd
-                    die;
+                    echo '<div class="alert alert-danger"> Le fichier est trop lourd !!</div>'; 
                 }
                 $fileExt = strtolower(substr(strrchr($fileName, '.'), 1)); //On met en minuscule tout le nom du fichier puis à partir du . on récupère tout ce qu'il y a à la suite soit l'extension et on enregistre dans une nouvelle variable
                 if(!in_array("." . $fileExt, $validExt))//On recherche dans le tableau des extensions valides si l'extension du fichier ajouté correspond
@@ -39,45 +38,4 @@ $fileName = $_FILES['image']['name']; //On met dans une variable le nom de l'ima
            
         }
 
-?>
-
-<?php function encherirSurCarte(){
-    //Ici on gere l'ajout du prix à augmenter
-    if(isset($_POST['encherir'])){
-        $id = $_POST['btnEncherir'];
-        foreach($jsonArray as $values){
-            if($values['id'] == $id){
-                $values['prix_lancement'] = $values['prix_lancement'] + $values['augmentation_prix'];
-                $values['date_fin'] = $values['date_fin'] + $values['augmentation_duree'];
-                $values['gain'] = $values['gain'] + $values['prix_clic'];
-                $_POST['prix_lancement'] =  $values['prix_lancement'];
-                $_POST['date_fin'] =  $values['date_fin'];
-                $_POST['gain'] =  $values['gain'];
-            }
-        }
-    }
-}
-?>
-<?php function codeJson(){
-//on test si le fichier existe 
-$filename = 'libs/data.json';
-if (isset($filename)){
-        //fichier existe alors on récupère son contenu on transforme en array
-        //retourne le contenu du fichier dans une variable de type string
-        $jsonString = file_get_contents($filename);
-        //Transforme la structure json en array PHP
-        $jsonArray = json_decode($jsonString, true);
-        if ($jsonArray){
-            array_unshift($jsonArray,$_POST);
-            file_put_contents($filename,json_encode($jsonArray));
-        }else{
-            $jsonArray = [];
-            array_unshift($jsonArray,$_POST);
-            file_put_contents($filename,json_encode($jsonArray));
-
-            
-        }                      
-    }
-
-}
 ?>
