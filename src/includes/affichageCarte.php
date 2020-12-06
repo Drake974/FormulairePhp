@@ -1,4 +1,5 @@
-<?php      
+<?php    
+
         $filenameA = 'libs/data.json';
         $jsonString = file_get_contents($filenameA);
         $jsonArray = json_decode($jsonString, true);         
@@ -26,7 +27,7 @@
                     <div class="text-center" id="">
                         <form method="POST" action="#carte_<?= $values['id'] ?>">
                             <input name="inputEncherir" value="<?= $values['id'] ?>" hidden>
-                            <button id="" class="btn btn-primary btn-listEnchere p-0" name="encherir">Enchérir</button>
+                            <button id="btn_<?= $values['id'] ?>" class="btn btn-primary btn-listEnchere p-0" name="encherir">Enchérir</button>
                         </form>
                     </div>
                 </div>

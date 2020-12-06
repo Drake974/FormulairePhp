@@ -1,7 +1,7 @@
 <?php
 ?>  
     <script>
-    //Gestion du timer by Vincent
+        //Gestion du timer by Vincent
         var timer = setInterval(function countDown() {
             var tempAct = new Date(); //On recupere la date UNIX
             var heure = Math.floor(tempAct.getTime() / 1000); //On transforme la date en secondes depuis la date fixe UNIX
@@ -13,7 +13,7 @@
             document.getElementById('carte_<?= $values['id'] ?>').innerHTML = hoursRemaining + ' h : ' + minutesRemaining + ' m : ' + secondsRemaining + ' s ';
             if (timeRemaining <= 0) {//Sinon on met expire et on desactive le bouton encherir
                 document.getElementById('carte_<?= $values['id'] ?>').innerHTML = "TERMINER";
-                document.getElementById('id_<?= $values['id'] ?>').setAttribute('disabled', ''); // Bouton disabled quand temps expiré
+                document.getElementById('btn_<?= $values['id'] ?>').setAttribute('disabled', ''); // Bouton disabled quand temps expiré
                // document.getElementById('id_<?= $values['id'] ?>').classList.remove('btn-listEnchere');
                // document.getElementById('id_<?= $values['id'] ?>').classList.add('btn-listEnchere2');
             }

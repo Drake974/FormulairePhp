@@ -8,10 +8,15 @@ if (isset($_POST['submit'])){
     $_POST['gain'] = 0;
     $_POST['date_fin'] = null;
     unset($_POST['submit']);
+    echo 
+    '<div class="col-12 d-flex justify-content-center">
+    <div class="alert alert-success">Le produit a bien été ajouté !</div>
+    </div>';
+
     
     //on test si le fichier existe 
-$filename = 'libs/data.json';
-if (isset($filename)){
+    $filename = 'libs/data.json';
+    if (isset($filename)){
         //fichier existe alors on récupère son contenu on transforme en array
         //retourne le contenu du fichier dans une variable de type string
         $jsonString = file_get_contents($filename);
@@ -24,12 +29,13 @@ if (isset($filename)){
             $jsonArray = [];
             array_unshift($jsonArray,$_POST);
             file_put_contents($filename,json_encode($jsonArray));
-
-            
+           
         }                      
     }
 
 }
+
+  
 
 ?>
 

@@ -23,17 +23,20 @@
 <body>
     <!-- header -->
         <?php include 'src/includes/header.php'; ?>
-    
+      
     <!--Affichage du Formulaire-->
     <?php include 'src/includes/formulaireEntrer.php'; ?>
     <?php  include 'libs/traitement.php'; ?>
 
     <?php include 'libs/encherirCarte.php'; ?>
     <!--Affichage des cartes-->
-    <?php include 'src/includes/affichageCarte.php'; ?>
-   
-
     
+    <?php include 'src/includes/affichageCarte.php'; ?>
+    <?php include 'libs/fonctionEtat.php';?>
+    <?php include 'src/includes/affichageCarteBack.php'; ?>
+
+    <?php include 'src/includes/formulaireModifierCarte.php'; ?>
+    <?php include 'libs/modificationCarte.php'; ?>
 
 
 
