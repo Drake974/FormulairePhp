@@ -1,7 +1,3 @@
-
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,32 +14,16 @@
     <link rel="stylesheet" href="src/css/style.css">
     
 
-    <title>Formulaire d'enchère</title>
+    <title>Ajout d'une Enchère</title>
 </head>
 <body>
-    <!-- header -->
-        <?php include 'src/includes/header.php'; ?>
-      
-    <!--Affichage du Formulaire-->
-    <?php //include '/libs/fonctionValidation.php';?>
-    <?php //include 'src/includes/formulaireEntrer.php'; ?>
-    <?php // include 'libs/traitement.php'; ?>
+   <!-- header -->
+   <?php include 'src/includes/header.php'; ?>
 
-    <?php include 'libs/encherirCarte.php'; ?>
-    <!--Affichage des cartes-->
-    <?php// include 'libs/fonctionEtat.php';?>
-    <?php// include 'libs/modificationCarte.php'; ?>
-    
-    <?php include 'src/includes/affichageCarte.php'; ?>
-    
-    
-    <?php// include 'src/includes/affichageCarteBack.php'; ?>
-    
-    
-    <?php//include 'src/includes/formulaireModifierCarte.php'; ?>
-   
-
-
+   <!--Affichage du Formulaire-->
+   <?php include '/libs/fonctionValidation.php';?>
+    <?php include 'src/includes/formulaireEntrer.php'; ?>
+    <?php  include 'libs/traitement.php'; ?>
 
  <!-- jQuery and JS bundle w/ Popper.js -->
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -52,6 +32,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
-    </body>
-    
-  
+</body>

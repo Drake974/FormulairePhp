@@ -12,6 +12,7 @@
         <?php if (isset($jsonArray)) :?>
         
         <?php foreach($jsonArray as $values) :?>
+            <?php if($values['etat'] == "actif"):?>
 
             <div class="card  shadow m-lg-4" style="width: 18rem;">
                 <div class="duree d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold"
@@ -27,12 +28,13 @@
                     <div class="text-center" id="">
                         <form method="POST" action="#carte_<?= $values['id'] ?>">
                             <input name="inputEncherir" value="<?= $values['id'] ?>" hidden>
-                            <button id="btn_<?= $values['id'] ?>" class="btn btn-primary btn-listEnchere p-0" name="encherir">Enchérir</button>
+                            <button id="btn_<?= $values['id'] ?>" class="btn btn-warning btnEncherir p-0" name="encherir">Enchérir</button>
                         </form>
                     </div>
                 </div>
             </div>
             <?php include 'libs/timer.php';?>
+            <?php endif; ?>
         <?php endforeach; ?>
         <?php endif; ?>   
     </div>

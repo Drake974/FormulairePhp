@@ -1,4 +1,4 @@
-<?php include '/libs/fonctionValidation.php';?>
+
 
         <div class="d-flex justify-content-center">
             <h2 class="mb-5 text-uppercase font-weight-bold">Ajout d'une enchère</h2>
@@ -8,7 +8,7 @@
         <?php endif ?>
      
         <form class="container-fluid w-100 d-flex justify-content-center align-items-center flex-column" method="POST"
-             enctype="multipart/form-data" action="">
+             enctype="multipart/form-data" action="ajoutProduit.php">
             <div class="d-flex justify-content-center align-items-center mb-3 items bg-light">
                 <label class="labelForm" for="#description">Description :</label>
                 <input type="text" class="form-control" id="description" maxlength="24" placeholder="24 caractères maximum"

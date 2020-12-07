@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top mb-5" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top mb-5" id="navEnchere">
         <div class="container-fluid">
             <a class="navbar-brand js-scroll-trigger text-white font-weight-bold" href="#page-top" id="title-header">Ventes aux enchères</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -11,7 +11,10 @@
                         <a class="nav-link js-scroll-trigger text-white effect-underline font-weight-bold" id="listeenchere" href="index.php">Liste des enchères</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white font-weight-bold" href="ajoutEnchere.php" id="encherenav">Ajouter une enchère</a>
+                        <a class="nav-link js-scroll-trigger text-white font-weight-bold" href="ajoutProduit.php" id="encherenav">Ajouter une enchère</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger text-white font-weight-bold" href="activeDesactiveM.php" id="">Activer ou Désactiver</a>
                     </li>
                 </ul>
             </div>

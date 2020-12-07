@@ -7,7 +7,13 @@ html, body{
     font-family: 'Roboto', sans-serif !important;
     
 }
+/* navbar */
+#navEnchere{
+    background-color: #81C784 !important; 
+  }
 
+
+  
 h2{
     font-size: 36px;
 }
@@ -55,6 +61,12 @@ form > h3{
 }
 
 /* carte */
+.btnEncherir{
+    
+    
+    width: 150px!important;
+    height: 40px!important;
+}
 
 
 /******** MEDIA QUERIES ********/

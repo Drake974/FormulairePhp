@@ -13,7 +13,6 @@ if (isset($_POST['submit'])){
     <div class="alert alert-success">Le produit a bien été ajouté !</div>
     </div>';
 
-    
     //on test si le fichier existe 
     $filename = 'libs/data.json';
     if (isset($filename)){

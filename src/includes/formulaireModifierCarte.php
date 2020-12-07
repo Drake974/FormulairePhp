@@ -1,32 +1,34 @@
 
+<?php include 'libs/fonctionValidation.php'; ?>
 <?php   
-    //include '/libs/fonctionEtat.php';
-     
+   modificationCarte();
+    
     $filenameE = 'libs/data.json';
     $jsonString = file_get_contents($filenameE);
     $jsonArray = json_decode($jsonString, true);
 
 ?>
-
+         <?php if(isset($_POST['submit_modifier'])){
+                validationDuFormulaireM();
+            };
+        ?>
         <div class="d-flex justify-content-center">
             <h2 class="mb-5 text-uppercase font-weight-bold">MODIFICATION DE L'ENCHERE</h2>
         </div>
        <?php if(isset($_POST['btn_modifier'])) :?>
         <?php foreach($jsonArray as $values) :?>
             <?php if($_GET['id'] == $values['id']):?>
-                <?php if(isset($_POST['submit_modifier'])):?>
-                <?php validationDuFormulaire()?>
-                <?php endif ?>
+               
      
         <form class="container-fluid w-100 d-flex justify-content-center align-items-center flex-column" method="POST"
-             enctype="multipart/form-data" action="">
+             enctype="multipart/form-data" action="modifierCarte.php">
             <div class="d-flex justify-content-center align-items-center mb-3 items bg-light">
                 <label class="labelForm" for="#description">Description :</label>
                 <input type="text" class="form-control" id="description" maxlength="24" placeholder="24 caractères maximum"
                     name="description" value="<?= $values['description'] ?>" required>
             </div>
             
-            <img src="ressources/img/<?=$values['image']?>" width="200px" height="200px" class="mb-3"
+            <img src="ressources/img/<?=$values['image']?>" width="300px" height="200px" class="mb-3"
                             alt="image enchere">
            <div class="d-flex justify-content-center align-items-center">
                 <label class="fileUpload d-flex justify-content-center align-items-center bg-light">
@@ -64,11 +66,14 @@
                     aria-describedby="basic-addon1">
             </div>
             <div class="d-flex justify-content-center align-items-center">
+            <input name="indiceModifier" value="<?= $values['id'] ?>" hidden>
                 <button type="submit" name="submit_modifier"
                     class="btn btn-warning text-uppercase text-white font-weight-bold btnAjoutEnchere mb-5"
                     style="width:220px;">Modifier l'enchère</button>
             </div>
             <?php endif ?>
+            
             <?php endforeach ?>
+            
             <?php endif ?>
         </form>
