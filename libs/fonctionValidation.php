@@ -23,7 +23,7 @@
         echo '<div class="alert alert-danger">Le fichier n\'est pas une image !!</div>';
         die;
         }
-        //Arrive ici cela veut dire que nos vérifications on été validées alors on peut procéder à l'envoie de l'image dans son bon dossier
+        //envoie de l'image dans son dossier
         $tmpName = $_FILES['image']['tmp_name']; //On recupère le nom temporaire ajouté par le serveur pour la gestion de l'image
         $idName = md5(uniqid(rand(), true)); //On attribue un id unique à l'image via la fonction md5 uniqid et random
         $fileDir = "ressources/img/" . $idName . "." . $fileExt; //On spécifie la direction d'enregistrement de l'image
@@ -35,35 +35,15 @@
                 
         }
         else {
-            $itemsId = md5(uniqid(rand(), true)); // id unique
-            $_POST['id'] = $itemsId; // rajout de l'id 
-            $_POST['etat'] = "inactif";
-            $_POST['gain'] = 0;
-            $_POST['date_fin'] = null;
+
             $_POST['image'] = "no_image.png"; 
-            unset($_POST['submit']);
+
             echo 
             '<div class="col-12 d-flex justify-content-center">
             <div class="alert alert-success">Le produit a bien été ajouté !</div>
             </div>';
 
-                //on test si le fichier existe 
-            $filename = 'libs/data.json';
-            if (isset($filename)){
-                    //fichier existe alors on récupère son contenu on transforme en array
-                    //retourne le contenu du fichier dans une variable de type string
-                    $jsonString = file_get_contents($filename);
-                    //Transforme la structure json en array PHP
-                    $jsonArray = json_decode($jsonString, true);
-                    if ($jsonArray){
-                        array_unshift($jsonArray,$_POST);
-                        file_put_contents($filename,json_encode($jsonArray));
-                    }else{
-                        $jsonArray = [];
-                        array_unshift($jsonArray,$_POST);
-                        file_put_contents($filename,json_encode($jsonArray));
-                    }                      
-                }
+            
         }     
 };
 
@@ -92,7 +72,7 @@ if(!in_array("." . $fileExt, $validExt))//On recherche dans le tableau des exten
 echo '<div class="alert alert-danger">Le fichier n\'est pas une image !!</div>';
 die;
 }
-//Arrive ici cela veut dire que nos vérifications on été validées alors on peut procéder à l'envoie de l'image dans son bon dossier
+//envoie de l'image dans son bon dossier
 $tmpName = $_FILES['image']['tmp_name']; //On recupère le nom temporaire ajouté par le serveur pour la gestion de l'image
 $idName = md5(uniqid(rand(), true)); //On attribue un id unique à l'image via la fonction md5 uniqid et random
 $fileDir = "ressources/img/" . $idName . "." . $fileExt; //On spécifie la direction d'enregistrement de l'image
@@ -114,10 +94,7 @@ if ($resultat){
             file_put_contents($filenameG,json_encode($jsonArray));
             }
         }
-        echo 
-        '<div class="col-12 d-flex justify-content-center">
-        <div class="alert alert-success">Le produit a bien été modifié !</div>
-        </div>';
+       
     }
 }
 

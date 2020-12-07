@@ -5,7 +5,6 @@
     if(isset($_POST['encherir'])){
         $id = $_POST['inputEncherir'];
         $filenameC = 'libs/data.json';
-        //$jsonArray = [];
         $jsonString = file_get_contents($filenameC);
         $jsonArray = json_decode($jsonString, true);
 
@@ -15,7 +14,7 @@
                 $jsonArray[$key]['date_fin'] = $jsonArray[$key]['date_fin'] + $jsonArray[$key]['augmentation_duree'];
                 $jsonArray[$key]['gain'] = $jsonArray[$key]['gain'] + $jsonArray[$key]['prix_clic'];        
             file_put_contents($filenameC,json_encode($jsonArray));
-           // header('Location: ../src/includes/affichageCarte.php#carte_'.$values['id']);
+           
             }
         }
     }

@@ -1,4 +1,4 @@
-<?php
+<?php //on recupere les valeurs du formulaire de modification pour ecraser les anciennes
 function modificationCarte(){   
 if (isset($_POST['submit_modifier'])){
     $id = $_POST['indiceModifier'];
@@ -8,12 +8,12 @@ if (isset($_POST['submit_modifier'])){
    
    foreach($jsonArray as $key => $values){
         if($values['id'] == $id){ 
-            $jsonArray[$key]['description'] = $_POST['description'];   
-            $jsonArray[$key]['prix_lancement'] = $_POST['prix_lancement'];
-            $jsonArray[$key]['duree'] = $_POST['duree'];
-            $jsonArray[$key]['prix_clic'] = $_POST['prix_clic'];
-            $jsonArray[$key]['augmentation_prix'] = $_POST['augmentation_prix'];
-            $jsonArray[$key]['augmentation_duree'] = $_POST['augmentation_duree'];
+            $jsonArray[$key]['description'] = htmlspecialchars($_POST['description']);   
+            $jsonArray[$key]['prix_lancement'] = abs((int)$_POST['prix_lancement']);
+            $jsonArray[$key]['duree'] = abs((int)$_POST['duree']);
+            $jsonArray[$key]['prix_clic'] = abs((float)$_POST['prix_clic']);
+            $jsonArray[$key]['augmentation_prix'] = abs((float)$_POST['augmentation_prix']);
+            $jsonArray[$key]['augmentation_duree'] = abs((int)$_POST['augmentation_duree']);
         file_put_contents($filenameG,json_encode($jsonArray));
         }
     }

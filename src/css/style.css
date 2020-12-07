@@ -13,7 +13,7 @@ html, body{
   }
 
 
-  
+
 h2{
     font-size: 36px;
 }
@@ -63,9 +63,40 @@ form > h3{
 /* carte */
 .btnEncherir{
     
-    
+    font-weight: bold;
+    text-transform: uppercase;
     width: 150px!important;
     height: 40px!important;
+    color: white!important;
+}
+
+.duree {
+    background: #FF9800;
+    height: 9%;
+    font-size: 1rem;
+    color: white;
+    border-top-left-radius: 4px !important;
+    width: 45%!important;
+}
+/*  article ajouté */
+.boutonDesactiver{
+    width: 110px!important;
+    padding: 0!important;
+    color: white!important;
+   
+}
+.boutonActiver{
+    width: 110px!important;
+    padding: 0!important;
+    background-color: #81C784 !important;
+    color: white!important;
+    
+}
+.boutonModif{
+    width: 110px!important;
+    padding: 0!important;
+    color: white!important;
+  
 }
 
 

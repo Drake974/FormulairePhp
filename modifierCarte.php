@@ -20,7 +20,7 @@
 <body>
     <!-- header -->
     <?php include 'src/includes/header.php'; ?>
-    
+
     <?php include 'libs/modificationCarte.php'; ?>
     <?php include 'src/includes/formulaireModifierCarte.php'; ?>
 

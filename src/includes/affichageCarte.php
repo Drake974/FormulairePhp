@@ -15,7 +15,7 @@
             <?php if($values['etat'] == "actif"):?>
 
             <div class="card  shadow m-lg-4" style="width: 18rem;">
-                <div class="duree d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold"
+                <div class="duree d-flex position-absolute  justify-content-center align-items-center font-weight-bold"
                     id="carte_<?= $values['id'] ?>">
                 </div>
                 <img src="ressources/img/<?= $values['image'] ?>" class="card-img-top img-fluid" style="height:230px;"

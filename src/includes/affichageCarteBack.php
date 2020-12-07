@@ -1,6 +1,6 @@
 
 <?php   
-    //include '/libs/fonctionEtat.php';
+   
      fonctionEtat();
     $filenameA = 'libs/data.json';
     $jsonString = file_get_contents($filenameA);
@@ -31,9 +31,9 @@
             <!--Boucle pour chaque items dans le tableau dans la variable session-->
             <?php foreach( $jsonArray as $values) :?>
                 <tr>
-                    <td id="tab_<?= $values['id'] ?>" class="">
+                    <td id="tab_<?= $values['id'] ?>" class="align-middle text-center">
                         <img src="ressources/img/<?= $values['image'] ?>" alt="" class="img-thumbnail"
-                            style="max-width: 150px; border: none;">
+                            style="max-width: 150px; border: none; max-height: 100px;">
                     </td>
                     <td class="align-middle text-center"><?= $values['description'] ?></td>
                     <td class="align-middle text-center"><?= $values['etat'] == 'actif' ? 'Actif' : 'Inactif' ?></td>
@@ -44,9 +44,10 @@
                     <td class="align-middle text-center"><?= $values['augmentation_duree'] ?> s</td>
                     <td class="align-middle text-center"><?= $values['gain'] ?> €</td>
                     <td class="align-middle text-center">
+                        
                         <form method="POST"  action="#tab_<?= $values['id']?> ">
                             <input name="indiceActif" value="<?= $values['id'] ?>" hidden>
-                            <button class="btn btn-warning" name="activer" type="submit" <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
+                            <button class="btn  boutonActiver" name="activer" type="submit" <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
                                     $attribut = "";
                                     if($values['etat'] == 'actif') {
                                         $attribut = "disabled";
@@ -59,7 +60,7 @@
                         <form method="POST"  action="#tab_<?= $values['id']?> ">
                             <input name="indiceInactif"  value="<?= $values['id'] ?>" hidden>
                             
-                            <button class="btn btn-warning" name="desactiver" type="submit" <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
+                            <button class="btn btn-warning boutonDesactiver text-center" name="desactiver" type="submit" <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
                                     $attribut = "";
                                     if($values['etat'] == 'inactif') {
                                         $attribut = "disabled";
@@ -69,9 +70,11 @@
                                     echo $attribut;
                                     ?>>Désactiver</button>
                         </form>
+                        
+                       
                         <form method="POST"  action="modifierCarte.php?id=<?= $values['id']?>">
                            
-                            <button class="btn btn-warning" name="btn_modifier" type="submit" 
+                            <button class="btn btn-warning boutonModif align-middle" name="btn_modifier" type="submit" 
                             <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
                                     $attribut = "";
                                     if($values['etat'] == 'actif') {
