@@ -68,7 +68,7 @@
             <div class="d-flex justify-content-center align-items-center">
             <input name="indiceModifier" value="<?= $values['id'] ?>" hidden>
                 <button type="submit" name="submit_modifier"
-                    class="btn btn-warning text-uppercase text-white font-weight-bold btnAjoutEnchere mb-5"
+                    class="btn btn-warning text-uppercase text-white font-weight-bold btnAjoutEnchere mb-5 shadow"
                     style="width:220px;">Modifier l'enchère</button>
             </div>
             <?php endif ?>

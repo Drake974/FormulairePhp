@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top mb-5" id="navEnchere">
         <div class="container-fluid">
             <div class="d-flex justify-content-center align-items-center">
-            <h2 class="navbar-brand js-scroll-trigger text-white font-weight-bold "  id="">Ventes aux enchères</h2>
+            <span class="navbar-brand js-scroll-trigger display-4 text-white font-weight-bold "  id="">Ventes aux enchères</span>
             </div>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"

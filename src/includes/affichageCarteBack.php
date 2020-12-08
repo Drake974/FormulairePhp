@@ -47,7 +47,7 @@
                         
                         <form method="POST"  action="#tab_<?= $values['id']?> ">
                             <input name="indiceActif" value="<?= $values['id'] ?>" hidden>
-                            <button class="btn  boutonActiver" name="activer" type="submit" <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
+                            <button class="btn  boutonActiver shadow" name="activer" type="submit" <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
                                     $attribut = "";
                                     if($values['etat'] == 'actif') {
                                         $attribut = "disabled";
@@ -60,7 +60,7 @@
                         <form method="POST"  action="#tab_<?= $values['id']?> ">
                             <input name="indiceInactif"  value="<?= $values['id'] ?>" hidden>
                             
-                            <button class="btn btn-warning boutonDesactiver text-center" name="desactiver" type="submit" <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
+                            <button class="btn btn-warning boutonDesactiver text-center shadow" name="desactiver" type="submit" <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
                                     $attribut = "";
                                     if($values['etat'] == 'inactif') {
                                         $attribut = "disabled";
@@ -74,7 +74,7 @@
                        
                         <form method="POST"  action="modifierCarte.php?id=<?= $values['id']?>">
                            
-                            <button class="btn btn-warning boutonModif align-middle" name="btn_modifier" type="submit" 
+                            <button class="btn btn-warning boutonModif align-middle shadow" name="btn_modifier" type="submit" 
                             <?php // Si l'état de l'article est 'inactif', on ajoute l'attribut 'disabled' au bouton
                                     $attribut = "";
                                     if($values['etat'] == 'actif') {
